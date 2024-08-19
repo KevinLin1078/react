@@ -1,17 +1,14 @@
 # Use the official Node.js image as a base image
 FROM node:18
 
-# Set the working directory inside the container
-WORKDIR /app
+WORKDIR /create-react-app					# Set the working directory inside the container
 
-# Install Create React App globally
-RUN npm install -g create-react-app
+RUN npm install -g create-react-app			# Install Create React App globally
 
-# Create a new React app
-RUN npx create-react-app my-react-app
+RUN npx create-react-app my-react-app		# Create a new React app
 
-# Set the working directory to the new React app
-WORKDIR /app/my-react-app
+WORKDIR /app/my-react-app					# Set the working directory to the new React app
+
 
 # Expose the port that the React app runs on
 EXPOSE 3000
